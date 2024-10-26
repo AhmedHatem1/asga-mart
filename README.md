@@ -1,27 +1,43 @@
-# AsgaMart
+# Angular AsgaMart Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+## Overview
 
-## Development server
+This is an Angular-based e-commerce application that allows users to view products, manage orders, and edit product quantities. The application is designed with a responsive UI using Angular Material for a modern and user-friendly experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Product Listing**: Displays all available products with images, prices, and available quantities.
+- **Order Management**: Users can view all orders with details such as order date, total price, and payment method.
+- **Order Details Page**: Detailed view of each order including customer details and products included in the order.
+- **Edit Product Quantity**: Users can edit the quantity of products and see low stock warnings.
+- **Responsive Design**: The application is fully responsive, providing a seamless experience across different devices.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- Angular Material
+- TypeScript
+- HTML/CSS
+- JSON for data management
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Live Demo  
 
-## Running unit tests
+Check out the live version of the app: [AsgaMart](https://asga-mart.netlify.app/products)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation  
 
-## Running end-to-end tests
+1. Clone the repository:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`git clone https://github.com/yourusername/responsive-image-gallery.git`
 
-## Further help
+`cd asga-mart`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Install dependencies:
+
+`npm install`
+
+3. Run the application:
+
+`ng serve`
+
+4. Open your browser and navigate to `http://localhost:4200`.
