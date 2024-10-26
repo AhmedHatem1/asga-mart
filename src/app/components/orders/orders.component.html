@@ -1,0 +1,13 @@
+<section class="orders-list">
+  <h2>Orders</h2>
+  <div *ngFor="let order of orders" class="order-card">
+    <a [routerLink]="['/orders', order.OrderId]" class="order-link">
+      <div class="order-info">
+        <p><strong>Order ID:</strong> {{ order.OrderId }}</p>
+        <p><strong>Order Date:</strong> {{ getOrderDate(order.OrderDate) | date }}</p>
+        <p><strong>Payment Type:</strong> {{ order.PaymentType }}</p>
+        <p><strong>Total Price:</strong> {{ calculateTotalPrice(order.Products) | currency }}</p>
+      </div>
+    </a>
+  </div>
+</section>

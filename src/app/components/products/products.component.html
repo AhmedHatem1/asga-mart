@@ -1,0 +1,25 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <mat-card>
+      <img mat-card-image [src]="product.ProductImg" alt="{{ product.ProductName }}" />
+      <mat-card-header>
+        <mat-card-title>{{ product.ProductName }}</mat-card-title>
+        <mat-card-subtitle>Price: {{ product.ProductPrice | currency }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p *ngIf="editedProductId !== product.ProductId">
+          Available Pieces: {{ product.AvailablePieces }}
+        </p>
+        <div *ngIf="editedProductId === product.ProductId">
+          <label for="quantity">Edit Quantity:</label>
+          <input type="number" id="quantity" [(ngModel)]="newQuantity" min="0" />
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button *ngIf="editedProductId !== product.ProductId" (click)="startEditing(product.ProductId, product.AvailablePieces)">Edit</button>
+        <button mat-button color="primary" *ngIf="editedProductId === product.ProductId" (click)="saveQuantity(product.ProductId)">Save</button>
+        <button mat-button color="warn" *ngIf="editedProductId === product.ProductId" (click)="cancelEditing()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

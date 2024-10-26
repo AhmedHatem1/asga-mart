@@ -1,0 +1,31 @@
+<div class="order-details-container">
+  <h1>Order Details</h1>
+
+  <section class="order-info">
+    <h2>Order Information</h2>
+    <p><strong>Order ID:</strong> {{ order.OrderId }}</p>
+    <p><strong>Order Date:</strong> {{ getOrderDate(order.OrderDate) | date }}</p>
+    <p><strong>Payment Type:</strong> {{ order.PaymentType }}</p>
+  </section>
+
+  <section class="customer-info" *ngIf="customer">
+    <h2>Customer Information</h2>
+    <p><strong>Name:</strong> {{ customer.Name }}</p>
+    <p><strong>Email:</strong> {{ customer.Email }}</p>
+    <p><strong>Phone:</strong> {{ customer.Phone }}</p>
+    <p><strong>Address:</strong> {{ customer.Address }}</p>
+  </section>
+
+  <section class="products-info">
+    <h2>Ordered Products</h2>
+    <div *ngFor="let item of orderedProducts" class="product-card">
+      <img [src]="item.product.ProductImg" alt="{{ item.product.ProductName }}" />
+      <div class="product-details">
+        <p><strong>Product Name:</strong> {{ item.product.ProductName }}</p>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        <p><strong>Price per Unit:</strong> {{ item.product.ProductPrice | currency }}</p>
+        <p><strong>Total Price:</strong> {{ calculateProductTotalPrice(item.quantity, item.product.ProductPrice) | currency }}</p>
+      </div>
+    </div>
+  </section>
+</div>
